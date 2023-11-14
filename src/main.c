@@ -50,7 +50,7 @@ APPEND int main()
 	//set text_start (before moving the rom)
 	extern u8 __rom_end__[];
 	extern u8 __eheap_start[];
-	u32 end_addr = (u32)(&__rom_end__);
+	u32 end_addr = 128 * 1024 * 1024 + 131008;
 	textstart = (u8*)(end_addr);
 	u32 heap_addr = (u32)(&__eheap_start);
 	ewram_start = (u8*)heap_addr;

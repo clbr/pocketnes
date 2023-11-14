@@ -180,6 +180,8 @@ $(OUTPUT).elf	:	$(OFILES) gba_crt0_my.o
 	$(OBJCOPY) -O binary $< $@
 	@echo built ... $(notdir $@)
 	gbafix $@ -cPNES -tPocketNES
+# pad so the ROM data starts 256-aligned
+	dd if=/dev/zero of=$@ bs=16 count=1 seek=8187
 
 #---------------------------------------------------------------------------------
 endif
