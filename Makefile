@@ -28,10 +28,10 @@ include $(DEVKITARM)/gba_rules
 
 %_mb.elf:
 	@echo linking multiboot CUSTOM
-	@$(LD) $(LDFLAGS) -specs=../src/gba_mb_my.specs $(OFILES) $(LIBPATHS) $(LIBS) -o $@
+	$(LD) $(LDFLAGS) -specs=../src/gba_mb_my.specs $(OFILES) $(LIBPATHS) $(LIBS) -o $@
 %.elf:
 	@echo linking cartridge CUSTOM
-	@$(LD)  $(LDFLAGS) -specs=../src/gba_my.specs $(OFILES) $(LIBPATHS) $(LIBS) -o $@
+	$(LD)  $(LDFLAGS) -specs=../src/gba_my.specs $(OFILES) $(LIBPATHS) $(LIBS) -o $@
 
 #-------
 
@@ -177,9 +177,9 @@ $(OUTPUT).elf	:	$(OFILES) gba_crt0_my.o
 -include $(DEPENDS)
 
 %.gba: %.elf
-	@$(OBJCOPY) -O binary $< $@
+	$(OBJCOPY) -O binary $< $@
 	@echo built ... $(notdir $@)
-	@gbafix $@ -cPNES -tPocketNES
+	gbafix $@ -cPNES -tPocketNES
 
 #---------------------------------------------------------------------------------
 endif

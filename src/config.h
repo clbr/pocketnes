@@ -43,18 +43,18 @@
 #define USE_GAME_SPECIFIC_HACKS 1	//Fixes Magic of Scheherazade (rearranges the banks in memory)
 #define USE_ACCELERATION 1	//Copies first 128K of ROM into EWRAM, not sure if this helps performance or not, but it does force 256 byte alignment.
 #define MULTIBOOT 0			//Allows the Link Transfer feature
-#define GOMULTIBOOT 1		//Allows use of the "Go Multiboot" feature (for multiboot builds)
+#define GOMULTIBOOT 0		//Allows use of the "Go Multiboot" feature (for multiboot builds)
 
 //Other options
-#define CHEATFINDER 1		//Enables the cheat finder
-#define EDITFOLLOW 1		//Allow editing the information for sprite following
+#define CHEATFINDER 0		//Enables the cheat finder
+#define EDITFOLLOW 0		//Allow editing the information for sprite following
 #define LINK 1				//Include code for GBA link cable multiplayer (this is different from link transfer)
 #define RTCSUPPORT 1		//Displays the current time for cartridges that support the Real Time Clock
 #define PREVIEWBUILD 0		//Shows a warning message before the emulator starts
 #define MOVIEPLAYER 0		//This is a GBA Movie Player build
 #define CRASH 1				//Enables the crash detector (if it fails to complete running a frame within 5 seconds, shows a stack dump)
-#define VISOLY 1			//Include RESET code for the Flash2Advance and EZ4 cartridges
-#define ROMMENU 1			//Include the Rom Menu code (excluded for Compy to save space)
+#define VISOLY 0			//Include RESET code for the Flash2Advance and EZ4 cartridges
+#define ROMMENU 0			//Include the Rom Menu code (excluded for Compy to save space)
 #define MAPPER_OVERLAYS 0	//Use IWRAM overlays for mappers (saves space for Compy)
 
 #if defined COMPY
