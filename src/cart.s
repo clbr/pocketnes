@@ -1966,8 +1966,8 @@ _chrline_previous: .byte 0 @chrline_previous
 _chrline_previous2: .byte 0 @chrline_previous2
 _chrline_previous3:	.byte 0 @chrline_previous3
 
-_twitch:	.byte 0
-_flicker: .byte 1
+_twitch:	.byte 1
+_flicker: .byte 0
 @padding
 	.byte 0,0
 @padding:
