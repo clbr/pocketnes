@@ -151,13 +151,13 @@ waitformulti:
 
 	adr lr,line0x				@return here after doing L/R + SEL/START
 
-	tst r1,#0x300				@if L or R was pressed
+	tst r1,#0x000				@if L or R was pressed
 	tstne r0,#0x100
 	tstne r0,#0x200				@and both L+R are held..
 	ldrne r1,=ui
 	bxne r1						@do menu
 
-	ands r3,r0,#0x300			@if either L or R is pressed (not both)
+	ands r3,r0,#0x000			@if either L or R is pressed (not both)
 	eornes r3,r3,#0x300
 	bicne r0,r0,#0x0c			@hide sel,start from EMU
 	str_ r0,NESjoypad
