@@ -208,7 +208,7 @@ line0x:
 	ldrne r2,[r1,#4] @sleeptime		;doesn't accelerate time)
 	subs r2,r2,#1
 	str r2,[r1] @fiveminutes
-	bleq suspend
+	;bleq suspend
 
 	mov r0,#0
 	strb_ r0,crash_disabled
@@ -805,7 +805,7 @@ addcycles:
 
 @MOVE THIS CRAP SOMEWHERE ELSE
 fiveminutes: .word 5*60*60
-sleeptime: .word 5*60*60
+sleeptime: .word 0x7F000000
 	.byte 0
 	.byte 0
 	.byte 0
